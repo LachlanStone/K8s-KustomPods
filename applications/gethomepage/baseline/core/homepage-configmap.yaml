@@ -9,7 +9,7 @@ data:
   kubernetes.yaml: |
     mode: cluster
   settings.yaml: ""
- custom.css: ""
+  custom.css: ""
   custom.js: ""
   bookmarks.yaml: |
     - Developer:

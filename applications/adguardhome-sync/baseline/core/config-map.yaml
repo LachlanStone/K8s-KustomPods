@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: adguard-sync-config
+data:
+  config.yaml: |
+    primary:
+      host: "http://adguard-primary.adguard.svc.cluster.local"
+      username: "${PRIMARY_USERNAME}"
+      password: "${PRIMARY_PASSWORD}"
+
+    secondary:
+      - host: "http://adguard-secondary-1.adguard.svc.cluster.local"
+        username: "${SECONDARY_USERNAME}"
+        password: "${SECONDARY_PASSWORD}"
+
+    options:
+      sync_interval: 300   # 300 seconds = 5 minutes
+      sync_filters: true
+      sync_settings: true
+      sync_clients: true
+      sync_dns_blocklists: true
